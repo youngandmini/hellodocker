@@ -39,4 +39,4 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd /home/docker/
-          ./gradlew clean build
+          sudo ./gradlew clean build
