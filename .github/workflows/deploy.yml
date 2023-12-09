@@ -28,7 +28,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         source: .
-        target: "/home/docker/"
+        target: "/home/docker/hellodocker"
 
     - name: SSH into EC2 and execute commands
       if: success()  # Only run if the previous step is successful
@@ -38,6 +38,6 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd /home/docker/
+          cd /home/docker/hellodocker
           chmod +x gradlew
           ./gradlew clean build --build-cache --daemon -x test
