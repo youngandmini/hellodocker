@@ -41,3 +41,7 @@ jobs:
           cd /home/docker/hellodocker
           chmod +x gradlew
           ./gradlew clean build --build-cache --daemon -x test
+
+          cd /home/docker
+          sudo docker-compose down
+          sudo docker-compose up --build -d
